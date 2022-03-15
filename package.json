@@ -4,9 +4,13 @@
   "description": "A Discord bot used to keep track of user ranks.",
   "main": "index.js",
   "scripts": {
-    "build": "npm run lint && npm run prettier && tsc",
+    "build": "rimraf ./built && npm run lint && npm run prettier && tsc",
+    "dev": "concurrently \"npm run mon\" \"npm run watch\"",
     "lint": "eslint . --ext .js,.ts",
-    "prettier": "prettier --write ."
+    "mon": "nodemon ./built/index.js",
+    "prettier": "prettier --write .",
+    "start": "node ./built/index.js",
+    "watch": "tsc -w"
   },
   "keywords": [],
   "author": "Rafael Negron",
@@ -15,11 +19,15 @@
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "eslint": "^8.11.0",
+    "nodemon": "^2.0.15",
     "prettier": "2.5.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.6.2"
   },
   "dependencies": {
+    "concurrently": "^7.0.0",
     "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
     "eslint-config-prettier": "^8.5.0"
   }
 }
