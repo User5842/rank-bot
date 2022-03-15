@@ -4,12 +4,16 @@
   "description": "A Discord bot used to keep track of user ranks.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run lint && tsc",
+    "lint": "eslint . --ext .js,.ts"
   },
   "keywords": [],
   "author": "Rafael Negron",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
     "typescript": "^4.6.2"
   },
   "dependencies": {
