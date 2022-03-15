@@ -1,6 +1,6 @@
-import { Client, Intents, Message } from "discord.js";
+import "dotenv/config";
 
-import { token } from "./config.json";
+import { Client, Intents, Message } from "discord.js";
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
@@ -14,4 +14,4 @@ client.on("messageCreate", (message: Message) => {
   }
 });
 
-client.login(token as string).catch(console.error);
+client.login(process.env.TOKEN).catch(console.error);

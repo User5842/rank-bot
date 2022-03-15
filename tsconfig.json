@@ -4,7 +4,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./built",
-    "resolveJsonModule": true,
     "rootDir": "src",
     "strict": true,
     "target": "es5"
