@@ -14,4 +14,4 @@ client.on("messageCreate", (message: Message) => {
   }
 });
 
-client.login(token).catch((err) => console.error(err));
+client.login(token as string).catch(console.error);
