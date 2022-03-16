@@ -2,7 +2,12 @@
 
 This bot will eventually create a ranking system for the [leetcode_reddit](https://discord.gg/B45J8HKNth) Discord server.
 
-- [ ] Output events based on pre-defined user interactions.
+![rank-bot v1 diagram][]
+
+[rank-bot v1 diagram]: images/rank-bot.drawio.png
+
+- [x] Output message events gathered from the server.
+- [ ] Filter based on pre-defined events (e.g., reactions, responses, replies).
 
 ## Getting Started
 
