@@ -4,3 +4,8 @@
 .env
 .project
 .vscode
+.idea/.gitignore
+.idea/modules.xml
+.idea/rank-bot.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/Project_Default.xml
