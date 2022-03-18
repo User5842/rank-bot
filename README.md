@@ -23,7 +23,7 @@ This bot will eventually create a ranking system for the [leetcode_reddit](https
 
 If you want to collaborate, we may be interested in working with you to get you these credentials in service of a common goal. Please join the server using the above link and speak with the server owner or moderator.
 
-###Installation
+### Installation
 1. Install dependencies using `npm i`.
 2. Create your own `.env` environment file at the root of the project, and add your keys:
    ```

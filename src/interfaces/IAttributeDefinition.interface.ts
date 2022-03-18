@@ -6,6 +6,7 @@ export interface IAttributeDefinition {
    * A name for the attribute.
    */
   AttributeName: string;
+
   /**
    * The data type for the attribute, where:
    *    S - the attribute is of type String
