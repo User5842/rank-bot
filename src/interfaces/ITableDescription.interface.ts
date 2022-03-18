@@ -1,4 +1,4 @@
-import { IAttributeDefinition } from "./IAttributeDefinition.interface";
+import {IAttributeDefinition} from "./IAttributeDefinition.interface";
 import {IKeySchemaElement} from "./IKeySchemaElement.interface";
 
 export interface ITableDescription {

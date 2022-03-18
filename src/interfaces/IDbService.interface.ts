@@ -14,5 +14,5 @@ export interface IDbService {
      * @param readCapacityUnits A read capacity unit represents one strongly consistent read per second, or two eventually consistent reads per second, for an item up to 4 KB in size.
      * @param writeCapacityUnits A write capacity unit represents one write per second, for an item up to 1 KB in size.
      */
-    createTable(name:string, keySchema:IKeySchemaElement[], attributionDefinitions: IAttributeDefinition[], readCapacityUnits:number, writeCapacityUnits:number):Promise<any>;
+    createTable(name: string, keySchema: IKeySchemaElement[], attributionDefinitions: IAttributeDefinition[], readCapacityUnits: number, writeCapacityUnits: number): Promise<any>;
 }
