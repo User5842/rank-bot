@@ -5,9 +5,7 @@ import { IEvent } from "../interfaces/IEvent.interface";
 module.exports = {
   execute(invite: Invite) {
     console.log(
-      `User #${invite?.inviterId || "???"} created an invite ${
-        invite?.code || "???"
-      }.`
+      `User #${invite?.inviterId || "???"} created an invite ${invite?.code || "???"}.`
     );
     // TODO: Store these invites
   },
