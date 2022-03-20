@@ -1,13 +1,7 @@
 import "dotenv/config";
-
-import { Client, Intents } from "discord.js";
-
+import DiscordClientInstance from "./utils/DiscordClientInstance";
 import { initializeEventHandlers } from "./utils/utils";
 
-const client = new Client({
-  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
-});
+initializeEventHandlers(DiscordClientInstance);
 
-initializeEventHandlers(client);
-
-client.login(process.env.TOKEN).catch(console.error);
+DiscordClientInstance.login(process.env.TOKEN).catch(console.error);
