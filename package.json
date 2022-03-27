@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf ./built && npm run lint && npm run prettier && tsc",
     "dev": "concurrently \"npm run mon\" \"npm run watch\"",
-    "lint": "eslint . --ext .js,.ts",
+    "lint": "eslint . --fix --ext .js,.ts",
     "mon": "nodemon ./built/index.js",
     "prettier": "prettier --write .",
     "start": "node ./built/index.js",
@@ -17,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "17.0.21",
+    "@types/node-cron": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "5.15.0",
     "@typescript-eslint/parser": "5.15.0",
     "eslint": "8.11.0",
@@ -32,6 +33,7 @@
     "concurrently": "^7.0.0",
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0",
-    "eslint-config-prettier": "^8.5.0"
+    "eslint-config-prettier": "^8.5.0",
+    "node-cron": "^3.0.0"
   }
 }
