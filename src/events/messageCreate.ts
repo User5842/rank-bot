@@ -4,6 +4,9 @@ import { IEvent } from "../interfaces/IEvent.interface";
 
 const participationScore: Record<string, number> = {};
 
+/**
+ * An event listener for the messageCreate Discord.js event.
+ */
 module.exports = {
   execute(message: Message) {
     if (message.channel.isText()) {

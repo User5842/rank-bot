@@ -1,13 +1,37 @@
-//TODO: Store a cache of
-// 1. Which invites codes were created by who
-// 2. The current # of uses for each for invite code.
+import { Collection, Guild, Invite } from "discord.js";
 
+import DiscordClientInstance from "./DiscordClientInstance";
+
+/**
+ * A service to abstract away user invite statistics tracking.
+ */
 export default {
+  /**
+   * Update the database using all the current invites available from Discord for all Guilds the bot is a member of.
+   */
   updateInvites() {
-    console.log("Syncing discord invites with database invites...");
-    // TODO: Retrieve ALL invite code information from discord channel, and potentially sync it with the database, if
-    //       not now, then at some point in the future, perhaps as a scheduled task or, at bare minimum, as part of the
-    //       shutdown procedure for the server.
-    console.log("Discord invites synced with database invites!");
+    DiscordClientInstance.guilds.cache.forEach(
+      (guild) => void this.updateGuildInvites(guild)
+    );
+  },
+  /**
+   * Update the database using all the current invites available from Discord for a given Guild.
+   *
+   * @param guild The Guild with the invites to be updated.
+   */
+  async updateGuildInvites(guild: Guild) {
+    console.log(`Updating all invites for guild ${guild.name}`);
+    try {
+      const invites: Collection<string, Invite> = await guild.invites.fetch({
+        cache: false,
+      });
+      //TODO: Add current invite statistics into the database.
+      console.log(
+        `Updated ${invites.size} active invites for guild ${guild.name}`,
+        invites
+      );
+    } catch (err) {
+      console.error(`Failed to update invites for guild ${guild.name}:\n`, err);
+    }
   },
 };
